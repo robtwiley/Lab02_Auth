@@ -2,6 +2,15 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 
+# Authlogic for web site authentication
+# Note have to use this to create the user_session model
+#  Put this in your Gemfile:
+#     gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+#  Run this at command line:
+#      rails g authlogic:session user_session
+#
+gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3' 
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

@@ -1,4 +1,12 @@
 Lab02Auth::Application.routes.draw do
+
+  resources :user_sessions
+  match 'login', :to => 'user_sessions#new', :as => "login"
+  match 'logout', :to => 'user_sessions#destroy', :as => "logout"
+  
+  resources :users
+  resources :user_types
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,6 +20,7 @@ Lab02Auth::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  
 
   # Sample resource route with options:
   #   resources :products do
@@ -48,7 +57,7 @@ Lab02Auth::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "users#index"
 
   # See how all your routes lay out with "rake routes"
 
